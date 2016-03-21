@@ -4,10 +4,9 @@
   require_once 'StackImplementation.php';
   class StackTest extends PHPUnit_Framework_TestCase
   {
-      function testCanCreateAWrapper() {
-          $wrapper = new Wrapper();
+      function testCanCreateStack() {
+          $stack = new StackImplementation();
       }
-
       public function testEmpty()
       {
           $stack = array();
