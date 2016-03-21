@@ -1,3 +1,6 @@
+<?php
+
+
 /**
  * Cytonn Technologies
  *
@@ -6,10 +9,7 @@
  * Project: php.app
  *
  */
-
-
-<?php
-
+ 
   //Require StackImplementation.php
   require_once 'stackImplementation.php';
   class StackTest extends PHPUnit_Framework_TestCase
