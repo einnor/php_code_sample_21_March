@@ -1,22 +1,24 @@
 <?php
 
   //Require StackImplementation.php
-  require_once 'StackImplementation.php';
+  require_once 'stackImplementation.php';
   class StackTest extends PHPUnit_Framework_TestCase
   {
       function testCanCreateStack() {
           $stack = new StackImplementation();
       }
-      public function testEmpty()
+      /**
+       * @depends testCanCreateStack
+       */
+      public function testEmpty(StackImplementation $stack)
       {
-          $stack = array();
           $this->assertEmpty($stack);
           return $stack;
       }
       /**
        * @depends testEmpty
        */
-      public function testPush(array $stack)
+      public function testPush(StackImplementation $stack)
       {
           array_push($stack, 'foo');
           $this->assertEquals('foo', $stack[count($stack)-1]);
@@ -26,7 +28,7 @@
       /**
        * @depends testPush
        */
-      public function testPop(array $stack)
+      public function testPop(StackImplementation $stack)
       {
           $this->assertEquals('foo', array_pop($stack));
           $this->assertEmpty($stack);
